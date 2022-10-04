@@ -1,8 +1,6 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+title: Home
 ---
 <html lang ="en">
 <body>
@@ -12,12 +10,11 @@ layout: home
       <div class="article-image-section article-section"></div>
       <div class="article-description-section article-section">
         <p>
-          Filler text1 <a class="source-link" href="#" target="_blank">Filler2</a>. See how I did it <a class="yt-link"
-            href="https://google.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>.
+          Place holder - description
         </p>
       </div>
       <div class="article-title-section article-section">
-        <h2>Filler3</h2>
+        <h2>Title</h2>
         <i class="fa-solid fa-plus"></i>
       </div>
       <div class="article-nav-section article-section">
@@ -32,7 +29,7 @@ layout: home
     <article data-index="1" data-status="inactive">
       <div class="article-image-section article-section"></div>
       <div class="article-description-section article-section">
-        <p>Filler4</p>
+        <p>Placeholder2 - description</p>
       </div>
       <div class="article-title-section article-section">
         <h2>Wicked Cool Library Shelves</h2>
