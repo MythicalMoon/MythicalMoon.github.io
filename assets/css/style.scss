@@ -3,7 +3,7 @@
 
 
 :root {
-    --background-color: rgb(6, 11, 25);
+    --background-color: rgb(10, 22, 56);
     --border-color: rgb(255, 255, 255, 0.1);
     --highlight-color: rgb(126, 87, 194);
     --yt-color: rgb(229, 57, 53);
@@ -113,7 +113,239 @@
   main {
     flex-grow: 1;
     position: relative;
+    overflow: scroll;
+  }
+
+  main > project {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    grid-template-rows: 4fr 4fr;
+    position: relative;
+    text-align: center;
+    left: 0px;
+    top: 0px;
     overflow: hidden;
+  }
+  
+  main > project > project_section {
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    display: grid;
+    position: relative;
+  }
+
+
+  
+  main > project > splitter{
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    display: grid;
+    position: absolute;
+  }
+
+
+
+  
+  main > project > .project-description-section,
+  main > project > .project-nav-section {
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+  }
+  
+  main > project > .project-title-section,
+  main > project > .project-nav-section {
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+
+  }
+  
+  main > project:first-child > .project-image-section {
+    background-image: url('https://images.unsplash.com/photo-1473308822086-710304d7d30c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZWxlY3RyaWNpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+  }
+  
+  main > project:nth-child(2) > .project-image-section {
+    background-image: url("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+  }
+  
+  main > project:nth-child(3) > .project-image-section {
+    background-image: url("https://images.unsplash.com/photo-1660580554695-d2ca5008f1f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80");
+  }
+  
+  main > project:nth-child(4) > .project-image-section {
+    background-image: url("https://images.unsplash.com/photo-1660766877755-4cac24f6cf21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80");
+  }
+  
+  main > project > .project-image-section {
+    background-position: center;
+    background-size: cover;
+  }
+  
+  main > project > .project-description-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 20%; 
+  }
+  
+  main > project > .project-description-section > p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.25em;
+    text-align: left;
+  }
+  
+  main > project > .project-description-section > p  > a:hover {
+    text-decoration: underline;
+  }
+  
+  main > project > .project-title-section {
+    padding: 2rem 2rem;
+  }
+  
+  main > project > .project-title-section * {
+    color: white;
+  }
+  
+  main > project > .project-title-section > h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.5rem;
+    line-height: 3rem;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  main > project > .project-title-section > i {
+    color: rgba(255, 255, 255, 0.75);
+    font-size:  4rem;
+  }
+  
+  main > project > .project-nav-section > .project-nav-button {
+    background-color: transparent;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  
+  main > project > .project-nav-section > .project-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+  
+  main > project > .project-nav-section > .project-nav-button:nth-child(2) {
+    border-left: 1px solid var(--border-color);
+  }
+
+  main > about {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 7fr;
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+  }
+  
+  main > about > .about-section {
+    height: 100%;
+    display: flex;
+  }
+  
+  main > about > .about-description-section,
+  main > about > .about-nav-section {
+    border-top: 1px solid var(--border-color);
+  }
+  
+  main > about > .about-title-section,
+  main > about > .about-nav-section {
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  main > about:first-child > .about-image-section {
+    background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-position-y: 15%;
+  }
+  
+  main > about:nth-child(2) > .about-image-section {
+    background-image: url("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+  }
+  
+  main > about:nth-child(3) > .about-image-section {
+    background-image: url("https://images.unsplash.com/photo-1660580554695-d2ca5008f1f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80");
+  }
+  
+  main > about:nth-child(4) > .about-image-section {
+    background-image: url("https://images.unsplash.com/photo-1660766877755-4cac24f6cf21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80");
+  }
+  
+  main > about > .about-image-section {
+    background-position: center;
+    background-size: cover;
+  }
+  
+  main > about > .about-description-section {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 20%; 
+  }
+  
+  main > about > .about-description-section > p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.25em;
+    text-align: left;
+  }
+  
+  main > about > .about-description-section > p  > a:hover {
+    text-decoration: underline;
+  }
+  
+  main > about > .about-title-section {
+    flex-direction: column;
+    padding: 2rem 2rem;
+  }
+  
+  main > about > .about-title-section * {
+    color: white;
+  }
+  
+  main > about > .about-title-section > h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.5rem;
+    line-height: 3rem;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  main > about > .about-title-section > i {
+    color: rgba(255, 255, 255, 0.75);
+    font-size:  4rem;
+  }
+  
+  main > about > .about-nav-section > .about-nav-button {
+    background-color: transparent;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  
+  main > about > .about-nav-section > .about-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+  
+  main > about > .about-nav-section > .about-nav-button:nth-child(2) {
+    border-left: 1px solid var(--border-color);
   }
   
   main > article {
@@ -127,7 +359,7 @@
     top: 0px;
     transition: transform 400ms ease;  
   }
-  
+
   main > article[data-status="inactive"] {
     transform: translateX(-100%);
     transition: none;
@@ -171,7 +403,7 @@
   }
   
   main > article:first-child > .article-image-section {
-    background-image: url("https://images.unsplash.com/photo-1565626424178-c699f6601afd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80");
+    background-image: url('/assets/images/laptop-screen.jpg');
   }
   
   main > article:nth-child(2) > .article-image-section {

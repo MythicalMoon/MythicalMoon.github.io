@@ -1,7 +1,3 @@
----
----
-
-
 /* -- Carousel Navigation -- */
 
 let activeIndex = 0;
