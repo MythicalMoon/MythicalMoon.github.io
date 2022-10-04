@@ -21,11 +21,11 @@
 title: MythicalMoon
 email: KasparsSB@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Portfolio of MythicalMoon
+  MythicalMoon's Portfolio
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://MythicalMoon.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  MythicalMoon
-linkedin_username: kasparssb
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: MythicalMoon
+linkedin_username:  kasparssb
 
 # Build settings
 theme: minima
