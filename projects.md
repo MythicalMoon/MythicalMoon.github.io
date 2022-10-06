@@ -16,22 +16,50 @@ permalink: /projects/
       <div class="description1"> 
         <p>Python project that gathers data and returns an average cost</p> 
       </div>
-      <div class="div5"> </div>
+      <div class="code-preview1"> 
+        <a href="https://github.com/MythicalMoon/Electrend" target="_blank">
+            <i class="fa-solid fa-code"></i>
+        </a>
+        <a href="/projects/live" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
     <div class="background-image-section2"> </div>
       <div class="title-section2"> <h2>Placeholder</h2> </div>
       <div class="stack2"> </div>
       <div class="description2"> </div>
-      <div class="div10"> </div>
+      <div class="code-preview2">  
+        <a href="https://github.com/MythicalMoon/#" target="_blank">
+            <i class="fa-solid fa-code"></i>
+        </a>
+        <a href="/projects/live" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
     <div class="background-image-section3"> </div>
       <div class="title-section3"> <h2>Placeholder</h2> </div>
       <div class="stack3"> </div>
       <div class="description3"> </div>
-      <div class="div15"> </div>
+      <div class="code-preview3"> 
+        <a href="https://github.com/MythicalMoon/#" target="_blank">
+            <i class="fa-solid fa-code"></i>
+        </a>
+        <a href="/projects/live" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
     <div class="background-image-section4"> </div>
       <div class="title-section4"> <h2>Placeholder</h2> </div>
       <div class="stack4"> </div>
       <div class="description4"> </div>
-      <div class="div20"> </div>
+      <div class="code-preview4"> 
+        <a href="https://github.com/MythicalMoon/#" target="_blank">
+            <i class="fa-solid fa-code"></i>
+        </a>
+        <a href="/projects/live" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
   </div>
 </main> 
 
