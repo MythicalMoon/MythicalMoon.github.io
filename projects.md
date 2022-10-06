@@ -1,11 +1,7 @@
 ---
-layout: page
 title: Projects
 permalink: /projects/
 ---
-<html lang ="en">
-<body>
-  {% include navbar.html %}
 <main>
   <div class="parent">
     <div class="background-image-section1"> </div>
@@ -62,6 +58,3 @@ permalink: /projects/
       </div>
   </div>
 </main> 
-
-</body>
-</html>
