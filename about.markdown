@@ -4,7 +4,7 @@ permalink: /about/
 ---
 <main>
     <about>
-    <div class="about-title-section about-section about-image-section">
+    <div class="about-title-section about-image-section">
         <h2>
         Kaspars S.B.
         </h2>

@@ -290,14 +290,14 @@
     text-align: center;
     left: 0px;
     top: 0px;
-    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
-    box-sizing: content-box; /* So the width will be 100% + 17px */
-    overflow-y: scroll;
   }
   
   main > about > .about-section {
     height: 100%;
     display: flex;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+    overflow: scroll;
   }
   
   main > about > .about-description-section,
