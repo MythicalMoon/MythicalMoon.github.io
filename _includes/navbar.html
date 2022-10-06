@@ -2,6 +2,11 @@
     <link rel="stylesheet" href="{{'/assets/css/style.css'}}">
     <script src="{{'/assets/js/app.js'}}"></script>
     <script src="https://kit.fontawesome.com/46186b43ea.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function confirm_alert(node) {
+            return confirm("Working on it");
+        }
+        </script>
 </head>
 
 <nav data-toggled="false" data-transitionable="false">
@@ -14,7 +19,7 @@
         <div id="nav-link-section" class="nav-section">
             <a href="/about">ABOUT</a>
             <a href="/projects">PROJECTS</a>
-            <a href="#">WRITE-UPS</a>
+            <a href="#" onclick="return confirm_alert(this);">WRITE-UPS</a>
         </div>
         <div id="nav-social-section" class="nav-section">
             <a href="https://github.com/MythicalMoon" target="_blank">

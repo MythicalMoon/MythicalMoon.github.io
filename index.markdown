@@ -10,12 +10,12 @@ title: Home
       <div class="article-image-section article-section"></div>
       <div class="article-description-section article-section">
         <p>
-          Place holder - description
+          The website and projects are under construction
         </p>
       </div>
       <div class="article-title-section article-section">
-        <h2>Title</h2>
-        <i class="fa-solid fa-plus"></i>
+        <h2>Disclaimer</h2>
+        <i class="fa-solid fa-plus" href="#" onclick="return confirm_alert(this);"></i>
       </div>
       <div class="article-nav-section article-section">
         <button class="article-nav-button" type="button" onclick="handleLeftClick()">
