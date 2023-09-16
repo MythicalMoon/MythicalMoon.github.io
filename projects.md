@@ -13,10 +13,10 @@ permalink: /projects/
         <p>Python project that gathers data and returns an average cost</p> 
       </div>
       <div class="code-preview1"> 
-        <a href="https://github.com/MythicalMoon/Electrend" target="_blank">
+        <a href="https://github.com/MythicalMoon/Electrend" target="_blank" title="Preview">
             <i class="fa-solid fa-code"></i>
         </a>
-        <a href="/projects/live" target="_blank">
+        <a href="/projects/live" target="_blank" title="Live">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
@@ -25,10 +25,10 @@ permalink: /projects/
       <div class="stack2"> </div>
       <div class="description2"> </div>
       <div class="code-preview2">  
-        <a href="https://github.com/MythicalMoon/#" target="_blank">
+        <a href="https://github.com/MythicalMoon/#" target="_blank" title="Preview">
             <i class="fa-solid fa-code"></i>
         </a>
-        <a href="/projects/live" target="_blank">
+        <a href="/projects/live" target="_blank" title="Live">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
@@ -37,10 +37,10 @@ permalink: /projects/
       <div class="stack3"> </div>
       <div class="description3"> </div>
       <div class="code-preview3"> 
-        <a href="https://github.com/MythicalMoon/#" target="_blank">
+        <a href="https://github.com/MythicalMoon/#" target="_blank" title="Preview">
             <i class="fa-solid fa-code"></i>
         </a>
-        <a href="/projects/live" target="_blank">
+        <a href="/projects/live" target="_blank" title="Live">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>
@@ -49,10 +49,10 @@ permalink: /projects/
       <div class="stack4"> </div>
       <div class="description4"> </div>
       <div class="code-preview4"> 
-        <a href="https://github.com/MythicalMoon/#" target="_blank">
+        <a href="https://github.com/MythicalMoon/#" target="_blank" title="Preview">
             <i class="fa-solid fa-code"></i>
         </a>
-        <a href="/projects/live" target="_blank">
+        <a href="/projects/live" target="_blank" title="Live">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
       </div>

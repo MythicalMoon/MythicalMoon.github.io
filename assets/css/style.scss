@@ -5,7 +5,6 @@
     --background-color-analogues: rgb(33, 16, 86);
     --border-color: rgb(255, 255, 255, 0.1);
     --highlight-color: rgb(126, 87, 194);
-    --yt-color: rgb(229, 57, 53);
   }
   
   body {
@@ -21,6 +20,9 @@
     box-sizing: border-box;
   }
   
+  .fa-solid {
+    color: rgba(255, 255, 255, 0.75);
+  }
   .fa-linkedin-in,
   .fa-github,
   .fa-envelope{
@@ -37,7 +39,7 @@
   a {
     text-decoration: none;
   }
-  
+
   a:hover {
     color: var(--highlight-color);
   }
@@ -189,7 +191,7 @@
     grid-area: 2 / 2 / 3 / 3;
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
   }
@@ -298,6 +300,7 @@
     padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
     box-sizing: content-box; /* So the width will be 100% + 17px */
     overflow: scroll;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   main > about > .about-description-section,
@@ -311,7 +314,7 @@
   }
   
   main > about:first-child > .about-image-section {
-    background-image: url('/assets/images/micah-boswell-OPnBJ5L2oxs-unsplash.jpg');
+    background-image: url('/assets/images/solid-navy-blue-concrete-textured-wall_53876-124584.jpg');
   }
   
   main > about > .about-image-section {
@@ -425,13 +428,13 @@
   main > article > .article-description-section,
   main > article > .article-nav-section {
     border-left: 1px solid var(--border-color);
-  }
+  }  
   
   main > article > .article-title-section,
   main > article > .article-nav-section {
     border-top: 1px solid var(--border-color);
   }
-  
+
   main > article:first-child > .article-image-section {
     background-image: url('/assets/images/laptop-screen.jpg');
   }
@@ -475,7 +478,7 @@
   }
   
   main > article > .article-title-section * {
-    color: white;
+    color: rgb(180, 69, 69);
   }
   
   main > article > .article-title-section > h2 {
@@ -492,7 +495,7 @@
     font-size:  4rem;
     cursor: pointer;
   }
-  
+
   main > article > .article-nav-section > .article-nav-button {
     background-color: transparent;
     flex-grow: 1;
@@ -502,11 +505,11 @@
     font-size: 3rem;
     cursor: pointer;
   }
-  
+
   main > article > .article-nav-section > .article-nav-button:hover {
     background-color: rgba(255, 255, 255, 0.02);
   }
-  
+
   main > article > .article-nav-section > .article-nav-button:nth-child(2) {
     border-left: 1px solid var(--border-color);
   }
@@ -548,6 +551,8 @@
     main > article > .article-description-section,
     main > article > .article-nav-section {
       border-left: none;
+      border-bottom: 1px solid var(--border-color);
+      order: 4;
     }
 
     main > article > .article-image-section {
@@ -562,11 +567,6 @@
     main > article > .article-description-section {
       justify-content: center;
       order: 3;
-    }
-    
-    main > article > .article-nav-section {
-      border-bottom: 1px solid var(--border-color);
-      order: 4;
     }
   }
   
