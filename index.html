@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaspars Beļikovs | Cybersecurity & Offensive Security Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            900: '#0a0f1d',
+                            800: '#111827',
+                            700: '#1f2937',
+                            600: '#374151',
+                            cyan: '#06b6d4',
+                            green: '#10b981',
+                            darkgreen: '#047857'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['Courier New', Courier, monospace],
+                        sans: ['Inter', sans-serif]
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Marked.js for parsing markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            background-color: #0a0f1d;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+        }
+        .glow-green {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+        .terminal-box {
+            background: rgba(17, 24, 39, 0.85);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            backdrop-filter: blur(12px);
+        }
+        .scanlines {
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.25) 50%
+            ), linear-gradient(
+                90deg,
+                rgba(255, 0, 0, 0.03),
+                rgba(0, 255, 0, 0.01),
+                rgba(0, 0, 255, 0.03)
+            );
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative selection:bg-cyan-500 selection:text-black">
+
+    <div class="absolute inset-0 scanlines z-50 pointer-events-none fixed"></div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-cyber-900/90 backdrop-blur-md border-b border-cyan-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="h-3 w-3 bg-cyan-400 rounded-full animate-ping"></div>
+                <span class="font-mono text-lg font-bold tracking-wider text-cyan-400">&gt; kaspars@belikovs:~#</span>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-mono text-gray-300">
+                <a href="#hero" class="hover:text-cyan-400 transition">~/home</a>
+                <a href="#skills" class="hover:text-cyan-400 transition">~/skills</a>
+                <a href="#writeups" class="hover:text-cyan-400 transition">~/writeups_importer</a>
+                <a href="#projects" class="hover:text-cyan-400 transition">~/case_studies</a>
+                <a href="#contact" class="hover:text-cyan-400 transition">~/contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="https://github.com/MythicalMoon" target="_blank" class="text-gray-400 hover:text-cyan-400 text-xl transition">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#contact" class="hidden sm:inline-block px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider text-black bg-cyan-400 hover:bg-cyan-300 rounded shadow-[0_0_15px_rgba(6,182,212,0.4)] transition">
+                    Initialize Contact
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative pt-20 pb-24 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.1),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-xs">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>OFFENSIVE SECURITY PRACTITIONER | HTB CPTS CANDIDATE</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
+                        Kaspars <span class="text-cyan-400">Beļikovs</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 leading-relaxed font-sans">
+                        Bridging rigorous operational logistics precision with over <strong class="text-cyan-400">3,000+ hours</strong> of intensive, self-directed security research, hands-on lab exploitation, and automated CTF simulations. Specialized in web application penetration testing, Linux/Unix privilege escalation, and vulnerability assessment.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#writeups" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-mono font-bold rounded shadow-lg shadow-cyan-500/20 transition flex items-center space-x-2">
+                            <i class="fa-solid fa-file-code"></i>
+                            <span>Test Write-Up Importer</span>
+                        </a>
+                        <a href="#projects" class="px-6 py-3 terminal-box hover:border-cyan-400 text-cyan-400 font-mono rounded transition flex items-center space-x-2">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>View HTB Clicker Case Study</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terminal widget card -->
+                <div class="lg:col-span-5">
+                    <div class="terminal-box rounded-xl p-6 shadow-2xl relative overflow-hidden">
+                        <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <span class="font-mono text-xs text-gray-400">bash - kaspars@sec-lab: ~</span>
+                        </div>
+                        <div class="font-mono text-xs space-y-3 text-gray-300 leading-relaxed">
+                            <p><span class="text-cyan-400">root@kali:~#</span> ./verify_credentials.sh</p>
+                            <p class="text-gray-400">[+] Target Platform: Enterprise & Lab Environments</p>
+                            <p class="text-gray-400">[+] Total Research Hours: <span class="text-green-400 font-bold">3,000+ hrs</span></p>
+                            <p class="text-gray-400">[+] Active Cert: <span class="text-cyan-400">HTB Certified Penetration Testing Specialist (CPTS)</span></p>
+                            <p class="text-gray-400">[+] Repositories: <span class="text-green-400">MythicalMoon (GitHub / GitLab)</span></p>
+                            <div class="p-3 bg-black/40 rounded border border-cyan-500/20 text-cyan-300 mt-2">
+                                <span class="animate-pulse">_</span> Status: Ready for offensive security operations &amp; penetration testing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-cyber-800/50 border-t border-b border-cyan-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase">// core competencies</span>
+                <h2 class="text-3xl font-bold text-white mt-2">Technical &amp; Offensive Security Arsenal</h2>
+                <p class="text-gray-400 text-sm mt-2">Equipped with rigorous methodologies developed through thousands of hours of practical exploitation and enterprise simulation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill 1 -->
+                <div class="terminal-box p-6 rounded-lg hover:border-cyan-400/60 transition group">
+                    <div class="h-12 w-12 rounded bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="font-mono text-lg font-bold text-white mb-2">Web Application Assessment</h3>
+                    <p class="text-gray-400 text-sm mb-4">Deep expertise in discovering and exploiting complex application flaws including SQLi, XSS, Broken Authentication, IDORs, and Parameter Pollution.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-mono bg-cyan-500/10 text-cyan-300 rounded border border-cyan-500/20">PortSwigger Academy</span>
+                        <span class="px-2 py-1 text-xs font-mono bg-cyan-500/10 text-cyan-300 rounded border border-cyan-500/20">SQLi &amp; RCE</span>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="terminal-box p-6 rounded-lg hover:border-cyan-400/60 transition group">
+                    <div class="h-12 w-12 rounded bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h3 class="font-mono text-lg font-bold text-white mb-2">Privilege Escalation &amp; Unix/Linux</h3>
+                    <p class="text-gray-400 text-sm mb-4">Advanced kernel and configuration analysis for local and remote privilege escalation in Linux/Unix environments. Custom tmux environment tuning.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-mono bg-green-500/10 text-green-300 rounded border border-green-500/20">SUID / strace</span>
+                        <span class="px-2 py-1 text-xs font-mono bg-green-500/10 text-green-300 rounded border border-green-500/20">PERL5OPT</span>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="terminal-box p-6 rounded-lg hover:border-cyan-400/60 transition group">
+                    <div class="h-12 w-12 rounded bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-mono text-lg font-bold text-white mb-2">Network &amp; AD Exploitation</h3>
+                    <p class="text-gray-400 text-sm mb-4">Reconnaissance frameworks, external/internal network exploitation fundamentals, and Active Directory penetration testing methodologies.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-mono bg-cyan-500/10 text-cyan-300 rounded border border-cyan-500/20">HTB CPTS Labs</span>
+                        <span class="px-2 py-1 text-xs font-mono bg-cyan-500/10 text-cyan-300 rounded border border-cyan-500/20">Reconnaissance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="writeups" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase">// interactive tool</span>
+                <h2 class="text-3xl font-bold text-white mt-2">GitLab / GitHub Write-Up Importer</h2>
+                <p class="text-gray-400 text-sm mt-2">Paste or load raw Markdown from your GitLab/GitHub repositories to instantly render and test formatted project cards and security write-ups.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Input Box -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <label class="font-mono text-xs text-cyan-400 uppercase tracking-wider">Input Markdown / GitLab Source:</label>
+                        <div class="space-x-2">
+                            <button onclick="loadSampleWriteup()" class="px-3 py-1 bg-cyber-700 hover:bg-cyber-600 text-xs font-mono text-gray-300 rounded border border-gray-600 transition">
+                                Load Sample (HTB Clicker)
+                            </button>
+                            <button onclick="clearImporter()" class="px-3 py-1 bg-red-900/30 hover:bg-red-900/50 text-xs font-mono text-red-300 rounded border border-red-500/30 transition">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="markdownInput" rows="14" class="w-full bg-cyber-800 border border-cyan-500/30 rounded-lg p-4 font-mono text-xs text-gray-200 focus:outline-none focus:border-cyan-400 transition" placeholder="# Paste your GitLab/GitHub markdown write-up here..."></textarea>
+                    <button onclick="renderWriteup()" class="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-mono font-bold rounded shadow-lg transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Compile &amp; Render Write-Up</span>
+                    </button>
+                </div>
+
+                <!-- Preview Box -->
+                <div class="lg:col-span-6">
+                    <div class="terminal-box rounded-lg p-6 min-h-[380px] flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
+                                <span class="font-mono text-xs text-gray-400 uppercase">// live rendered output</span>
+                                <span class="px-2 py-0.5 bg-green-500/10 text-green-400 border border-green-500/30 rounded font-mono text-[10px]">SUCCESSFULLY PARSED</span>
+                            </div>
+                            <div id="markdownPreview" class="prose prose-invert max-w-none font-sans text-sm text-gray-300 leading-relaxed space-y-3">
+                                <p class="text-gray-500 italic font-mono text-xs">Waiting for markdown input or sample selection...</p>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 mt-6 flex justify-between items-center text-xs font-mono text-gray-400">
+                            <span>Author: MythicalMoon</span>
+                            <span class="text-cyan-400">GitLab/GitHub Sync Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-cyber-800/40 border-t border-cyan-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase">// research archives</span>
+                <h2 class="text-3xl font-bold text-white mt-2">Featured Case Study: HTB Clicker Walkthrough</h2>
+                <p class="text-gray-400 text-sm mt-2">Deep-dive technical walkthrough demonstrating multi-vector vulnerability exploitation and local privilege escalation.</p>
+            </div>
+
+            <div class="terminal-box rounded-xl p-8 max-w-4xl mx-auto border-cyan-500/40 glow-cyan">
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-gray-800 mb-6">
+                    <div>
+                        <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded text-cyan-400 font-mono text-xs">Hack The Box Lab</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Machine: Clicker (Medium Linux)</h3>
+                    </div>
+                    <a href="https://github.com/MythicalMoon" target="_blank" class="px-4 py-2 bg-cyber-700 hover:bg-cyber-600 text-cyan-400 font-mono text-xs rounded border border-cyan-500/30 transition flex items-center space-x-2">
+                        <i class="fab fa-github"></i>
+                        <span>View Repository</span>
+                    </a>
+                </div>
+
+                <div class="space-y-6 font-sans text-sm text-gray-300">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-black/30 p-4 rounded border border-gray-800">
+                            <h4 class="font-mono text-cyan-400 text-xs font-bold uppercase tracking-wider mb-2">// Initial Attack Vector</h4>
+                            <ul class="space-y-1 text-xs text-gray-400">
+                                <li>• Parameter Pollution &amp; SQL Mass Assignment</li>
+                                <li>• CRLF Injection &amp; Web Parameter Tampering</li>
+                                <li>• PHP Log Poisoning leading to Remote Code Execution (RCE)</li>
+                            </ul>
+                        </div>
+                        <div class="bg-black/30 p-4 rounded border border-gray-800">
+                            <h4 class="font-mono text-green-400 text-xs font-bold uppercase tracking-wider mb-2">// Privilege Escalation</h4>
+                            <ul class="space-y-1 text-xs text-gray-400">
+                                <li>• SUID binary exploitation via <code class="text-cyan-300">strace</code> tracking</li>
+                                <li>• Execution vector manipulation using <code class="text-cyan-300">PERL5OPT</code> environment variables</li>
+                                <li>• Full root shell compromise and credential harvesting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-cyber-900/80 rounded border border-cyan-500/20 font-mono text-xs text-gray-300">
+                        <p class="text-cyan-400 font-bold mb-1"># Exploit Summary / Snippet:</p>
+                        <p class="text-gray-400">PERL5OPT="-d" perl -e 'exec("/bin/sh")'</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="terminal-box rounded-xl p-8 max-w-3xl mx-auto text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent pointer-events-none"></div>
+                <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase">// secure communications</span>
+                <h2 class="text-3xl font-bold text-white mt-2">Initialize Contact</h2>
+                <p class="text-gray-400 text-sm mt-2 max-w-xl mx-auto">
+                    Interested in discussing security research, penetration testing operations, or collaboration? Reach out directly via professional channels.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <a href="mailto:KasparsSB@hotmail.com" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-mono font-bold rounded transition flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>KasparsSB@hotmail.com</span>
+                    </a>
+                    <a href="https://github.com/MythicalMoon" target="_blank" class="px-6 py-3 terminal-box hover:border-cyan-400 text-cyan-400 font-mono rounded transition flex items-center space-x-2">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub (MythicalMoon)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-cyber-900 border-t border-cyan-500/20 text-center text-xs font-mono text-gray-500">
+        <p>&copy; 2026 Kaspars Beļikovs. All rights reserved. Built with offensive security precision.</p>
+    </footer>
+
+    <script>
+        function loadSampleWriteup() {
+            const sampleMarkdown = `# HTB Clicker Machine Walkthrough
+### Author: Kaspars Beļikovs (MythicalMoon)
+
+A comprehensive walkthrough documenting intermediate exploitation steps against the Linux Clicker machine.
+
+## 1. Web Enumeration & Vulnerabilities
+- **Parameter Pollution:** Identified insecure parameter handling in the backend scoring endpoint.
+- **SQL Mass Assignment:** Bypassed user privilege checks by injecting unauthorized object properties.
+- **PHP Log Poisoning:** Injected malicious PHP payloads into access logs leading to **RCE**.
+
+## 2. Local Privilege Escalation
+Upon securing an initial low-privileged shell, enumeration revealed a custom SUID binary utilizing system calls:
+\`\`\`bash
+strace -f -e trace=execve ./binary_file
+\`\`\`
+Leveraged environment variable manipulation via \`PERL5OPT\` to spawn a privileged shell and achieve root access.`;
+
+            document.getElementById('markdownInput').value = sampleMarkdown;
+            renderWriteup();
+        }
+
+        function clearImporter() {
+            document.getElementById('markdownInput').value = '';
+            document.getElementById('markdownPreview').innerHTML = '<p class="text-gray-500 italic font-mono text-xs">Waiting for markdown input or sample selection...</p>';
+        }
+
+        function renderWriteup() {
+            const input = document.getElementById('markdownInput').value;
+            const preview = document.getElementById('markdownPreview');
+            
+            if (!input.trim()) {
+                preview.innerHTML = '<p class="text-red-400 font-mono text-xs">Error: Markdown input is empty. Please paste write-up content or load sample.</p>';
+                return;
+            }
+
+            try {
+                preview.innerHTML = marked.parse(input);
+            } catch (e) {
+                preview.innerHTML = '<p class="text-red-400 font-mono text-xs">Error parsing markdown syntax.</p>';
+            }
+        }
+
+        // Auto load sample on start
+        window.onload = function() {
+            loadSampleWriteup();
+        };
+    </script>
+</body>
+</html>
