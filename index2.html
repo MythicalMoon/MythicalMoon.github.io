@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaspars Beļikovs | Cybersecurity & Offensive Security</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js for parsing Markdown write-ups -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.js"></script>
+    <style>
+        body { background-color: #0a0f1d; color: #e2e8f0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+        .glow-text { text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+        .card-border { border: 1px solid #1e293b; transition: all 0.3s ease; }
+        .card-border:hover { border-color: #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-sky-400 glow-text">&gt; kaspars@portfolio:~#</h1>
+            <nav class="space-x-6 text-sm text-slate-400">
+                <a href="#about" class="hover:text-sky-400">About</a>
+                <a href="#writeups" class="hover:text-sky-400">Write-ups</a>
+                <a href="#skills" class="hover:text-sky-400">Skills</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-grow space-y-16">
+
+        <!-- Hero Section -->
+        <section id="about" class="space-y-6">
+            <div class="inline-block px-3 py-1 bg-sky-950 text-sky-400 border border-sky-800 text-xs rounded">
+                Offensive Security Practitioner &bull; 3,000+ Lab Hours
+            </div>
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                Securing Systems Through <span class="text-sky-400">Offensive Research</span>.
+            </h2>
+            <p class="text-slate-400 max-w-2xl text-base leading-relaxed">
+                Dedicated security professional with over 3,000 hours of intensive hands-on exploitation across Hack The Box, PortSwigger, and TryHackMe. Specializing in web application assessments, Unix/Linux environments, and local privilege escalation.
+            </p>
+        </section>
+
+        <!-- Write-ups Showcase Section -->
+        <section id="writeups" class="space-y-6">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h3 class="text-2xl font-bold text-white">Machine & Lab Write-ups</h3>
+                    <p class="text-sm text-slate-400">Select a project or reference a raw Markdown link to load walkthroughs.</p>
+                </div>
+            </div>
+
+            <!-- Writeup Loader Controls -->
+            <div class="bg-slate-900 p-4 rounded-lg card-border space-y-4">
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Load External Markdown (Raw GitLab/GitHub URL)</label>
+                <div class="flex gap-2">
+                    <input type="text" id="mdUrlInput" placeholder="https://raw.githubusercontent.com/username/repo/main/writeup.md" class="flex-grow bg-slate-950 border border-slate-700 rounded px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-sky-400">
+                    <button onclick="loadRemoteMarkdown()" class="bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded text-sm font-semibold transition">Fetch Write-up</button>
+                </div>
+            </div>
+
+            <!-- Default Featured Writeup Card -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-900 p-6 rounded-lg card-border flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-sky-400 font-mono">Hack The Box &bull; Hard Linux</span>
+                        <h4 class="text-xl font-bold text-white mt-1">HTB Clicker Walkthrough</h4>
+                        <p class="text-sm text-slate-400 mt-2">
+                            Detailed exploitation walkthrough covering parameter pollution, SQL mass assignment, CRLF injection, PHP log poisoning for RCE, and SUID binary exploitation via `strace`.
+                        </p>
+                    </div>
+                    <button onclick="loadSampleWriteup()" class="self-start text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1">
+                        View Walkthrough &rarr;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Markdown Render Container -->
+        <section id="viewerSection" class="hidden space-y-4 bg-slate-900 p-8 rounded-lg border border-sky-500/40">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                <h3 class="text-xl font-bold text-sky-400" id="viewerTitle">Write-up Viewer</h3>
+                <button onclick="closeViewer()" class="text-slate-400 hover:text-white text-sm">[ Close X ]</button>
+            </div>
+            <div id="markdownOutput" class="prose prose-invert max-w-none text-slate-300 space-y-4 font-sans text-sm leading-relaxed overflow-x-auto">
+                <!-- Rendered markdown goes here -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="space-y-4 border-t border-slate-800 pt-12">
+            <h3 class="text-2xl font-bold text-white">Technical Arsenal</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                <div class="bg-slate-900 p-4 rounded card-border">
+                    <strong class="text-sky-400 block mb-2">Offensive Security</strong>
+                    <p class="text-slate-400">Web App Pen-Testing, External/Internal Network Exploitation, Privilege Escalation (Linux/Windows).</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded card-border">
+                    <strong class="text-sky-400 block mb-2">Environments & Tools</strong>
+                    <p class="text-slate-400">Linux/Unix Administration, Windows Systems, Virtualization, Reconnaissance Frameworks.</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded card-border">
+                    <strong class="text-sky-400 block mb-2">Methodologies</strong>
+                    <p class="text-slate-400">Active Directory Exploitation, White-Box Code Review, Technical Documentation & Exploit Reporting.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 mt-20 py-6 text-center text-xs text-slate-500">
+        &copy; 2026 Kaspars Beļikovs. Built for offensive security research & documentation.
+    </footer>
+
+    <!-- Script to handle Markdown rendering -->
+    <script>
+        const sampleMarkdown = `# HTB Clicker Walkthrough
+
+## Overview
+This machine features multiple layers of vulnerabilities starting from web parameter manipulation leading up to system-level privilege escalation.
+
+### 1. Initial Reconnaissance & Enumeration
+- Discovered web application running custom backend handlers.
+- Identified parameter pollution vectors on user profile update forms.
+
+### 2. Exploitation Chain
+* **SQL Mass Assignment:** Exploited insecure model binding to elevate user roles.
+* **CRLF Injection:** Injected headers into server logs.
+* **PHP Log Poisoning:** Leveraged log inclusion to achieve Remote Code Execution (RCE).
+
+### 3. Privilege Escalation
+1. Enumerated SUID binaries using custom scripts.
+2. Traced system calls using \`strace\` to find insecure library loading.
+3. Escalated privileges via \`PERL5OPT\` environment variable manipulation.
+`;
+
+        function loadSampleWriteup() {
+            document.getElementById('viewerTitle').innerText = "HTB Clicker Walkthrough";
+            document.getElementById('markdownOutput').innerHTML = marked.parse(sampleMarkdown);
+            document.getElementById('viewerSection').classList.remove('hidden');
+            window.location.hash = '#viewerSection';
+        }
+
+        async function loadRemoteMarkdown() {
+            const url = document.getElementById('mdUrlInput').value.trim();
+            if (!url) return alert("Please enter a valid raw markdown URL.");
+            
+            try {
+                document.getElementById('viewerTitle').innerText = "Loading Remote Write-up...";
+                document.getElementById('markdownOutput').innerHTML = "<p class='text-slate-500'>Fetching content...</p>";
+                document.getElementById('viewerSection').classList.remove('hidden');
+
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Network response was not ok");
+                const text = await response.text();
+
+                document.getElementById('viewerTitle').innerText = url.split('/').pop();
+                document.getElementById('markdownOutput').innerHTML = marked.parse(text);
+            } catch (error) {
+                document.getElementById('markdownOutput').innerHTML = `<p class='text-red-400'>Error loading markdown: ${error.message}. Ensure CORS allows fetching or use a raw GitHub/GitLab link.</p>`;
+            }
+        }
+
+        function closeViewer() {
+            document.getElementById('viewerSection').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
